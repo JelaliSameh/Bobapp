@@ -45,4 +45,4 @@ jobs:
           context: front  # Spécifie le contexte de build Docker
           file: front/Dockerfile  # Spécifie le fichier Dockerfile à utiliser
           push: true  # Indique que l'image doit être poussée vers Docker Hub
-          tags: ${{ secrets.DOCKER_USERNAME }}/bobapp-frontend:latest  # Tag de l'image Docker
+          tags: ${{ secrets.DOCKER_USERNAME }}/bobapp-frontend # Tag de l'image Docker
