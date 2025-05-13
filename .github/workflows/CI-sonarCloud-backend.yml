@@ -48,8 +48,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Jeton GitHub pour obtenir des informations sur les pull requests
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Jeton d'accès pour SonarCloud
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jelalisameh_bobapp -Dsonar.projectName=bobapp # Commande Maven pour vérifier le projet et lancer l'analyse SonarCloud
-
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ 
+             -Dsonar.projectKey=jelalisameh_bobapp \
+             -Dsonar.projectName=bobapp \
+             -Dsonar.organization=jelalisameh \
+             -Dsonar.host.url=https://sonarcloud.io \
+             -Dsonar.login=${{ secrets.SONAR_TOKEN }} 
+# Commande Maven pour vérifier le projet et lancer l'analyse SonarCloud
       # Étape 6: Upload du rapport de couverture JaCoCo
       - name: Upload JaCoCo coverage report
         if: always()  # Cette étape s'exécute toujours, même si les étapes précédentes échouent
