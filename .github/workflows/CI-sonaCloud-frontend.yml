@@ -69,13 +69,13 @@ jobs:
           JAVA_HOME: ${{ env.JAVA_HOME_17_X64 }}  # Chemin vers JDK 17
         run: |
           npx sonar-scanner \
-          -Dsonar.projectKey=did-bdx_OCP10-frontend \
+          -Dsonar.projectKey=jelalisameh_bobapp-frontend \
           -Dsonar.sources=. \
           -Dsonar.projectName=OCP10-frontend \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.organization=did-bdx \
-          -Dsonar.token=${{ secrets.SONAR_TOKEN_FRONTEND }} \
-          -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info  # Chemin vers le rapport de couverture LCOV
+          -Dsonar.organization=jelalisameh \
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info   # Chemin vers le rapport de couverture LCOV
 
       # Étape 10: Lister les fichiers de couverture
       - name: List coverage files
