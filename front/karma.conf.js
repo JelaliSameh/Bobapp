@@ -29,7 +29,8 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' }
+        { type: 'text-summary' },
+        { type: 'lcov', subdir: '.' }
       ]
     },
     reporters: ['progress', 'kjhtml'],
@@ -37,8 +38,14 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    browsers: process.env.CI ? ['ChromeHeadlessCI'] : ['ChromeHeadless'],  // Utilise ChromeHeadless dans un environnement CI
+    singleRun: !!process.env.CI, // Important pour que les tests ne restent pas bloqués dans un environnement CI
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']  // Ajoute cette option pour éviter des problèmes de permission dans un environnement CI
+      }
+    }
   });
 };
