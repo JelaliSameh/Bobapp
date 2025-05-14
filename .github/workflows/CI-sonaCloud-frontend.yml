@@ -75,7 +75,9 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.organization=jelalisameh \
           -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
-          -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info   # Chemin vers le rapport de couverture LCOV
+          -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info   
+          
+        # Chemin vers le rapport de couverture LCOV
 
       # Étape 10: Lister les fichiers de couverture
       - name: List coverage files
