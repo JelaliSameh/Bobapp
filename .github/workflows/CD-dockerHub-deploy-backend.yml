@@ -41,4 +41,4 @@ jobs:
           context: back  # Spécifie le contexte de build Docker
           file: back/Dockerfile  # Spécifie le fichier Dockerfile à utiliser
           push: true  # Indique que l'image doit être poussée vers Docker Hub
-          tags: ${{ secrets.DOCKER_USERNAME }}/bobapp-backend:latest  # Tag de l'image Docker
+        tags: mohamedsameh321/bobapp-backend:latest  # Tag de l'image Docker
