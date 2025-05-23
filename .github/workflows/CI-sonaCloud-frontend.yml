@@ -69,7 +69,7 @@ jobs:
           JAVA_HOME: ${{ env.JAVA_HOME_17_X64 }}  # Chemin vers JDK 17
         run: |
           npx sonar-scanner \
-          -Dsonar.projectKey=jelalisameh_bobapp \
+          -Dsonar.projectKey=JelaliSameh_Bobapp \
           -Dsonar.sources=. \
           -Dsonar.projectName=Bobapp \
           -Dsonar.host.url=https://sonarcloud.io \
