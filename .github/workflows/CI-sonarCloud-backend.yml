@@ -4,7 +4,7 @@ name: SonarCloud - Backend test and analysis (CI)
 on:
   push:
     branches:
-      - master  # Déclenche le workflow sur les pushs vers la branche master
+      - main  # Déclenche le workflow sur les pushs vers la branche main
   pull_request:
     types: [opened, synchronize, reopened]  # Déclenche le workflow sur les pull requests ouvertes, synchronisées ou rouvertes
 
