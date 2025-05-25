@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.openclassrooms</groupId>
-	<artifactId>bobapp</artifactId>
+	<artifactId>bobappback</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Bobappback</name>
 	<description>L'application de joke par excellence !</description>
