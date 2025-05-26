@@ -2,9 +2,10 @@ name: Deploy Frontend to Docker Hub (CD)
 
 # Déclencheur du workflow
 on:
-  push:
-    branches:
-      - main  # Déclenche le workflow sur les pushs vers la branche main
+  workflow_run:
+    workflows: ["SonarCloud - Frontend test and analysis (CI)"]
+    types:
+      - completed
 
 jobs:
   build-and-deploy:
