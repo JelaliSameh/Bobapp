@@ -65,7 +65,7 @@ jobs:
       - name: Run SonarQube Analysis for Frontend
         working-directory: front  # Spécifie le chemin du front-end
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Jeton d'accès pour SonarCloud
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FRONTEND }}  # Jeton d'accès pour SonarCloud
           JAVA_HOME: ${{ env.JAVA_HOME_17_X64 }}  # Chemin vers JDK 17
         run: |
           npx sonar-scanner \
@@ -74,7 +74,7 @@ jobs:
           -Dsonar.projectName=Bobappfront \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.organization=jelalisameh \
-          -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.token=${{ secrets.SONAR_TOKEN_FRONTEND }} \
           -Dsonar.javascript.lcov.reportPaths=coverage/bobapp/lcov.info   
           
         # Chemin vers le rapport de couverture LCOV
