@@ -17,6 +17,7 @@
   <sonar.projectKey>bobappback</sonar.projectKey>
   <sonar.organization>jelalisameh</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.projectName>Bobappback</sonar.projectName>
 </properties>
 	<dependencies>
 		<dependency>
