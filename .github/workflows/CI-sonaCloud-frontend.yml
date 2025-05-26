@@ -5,9 +5,12 @@ on:
   push:
     branches:
       - main  # Déclenche le workflow sur les pushs vers la branche main
+    paths:
+      - 'front/**'  
   pull_request:
     types: [opened, synchronize, reopened]  # Déclenche le workflow sur les pull requests ouvertes, synchronisées ou rouvertes
-
+    paths:
+      - 'front/**'
 jobs:
   frontend:
     name: Test Frontend and Analyze with SonarQube  # Nom du job

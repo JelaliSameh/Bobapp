@@ -5,9 +5,12 @@ on:
   push:
     branches:
       - main  # Déclenche le workflow sur les pushs vers la branche main
+    paths:
+      - 'back/**'
   pull_request:
     types: [opened, synchronize, reopened]  # Déclenche le workflow sur les pull requests ouvertes, synchronisées ou rouvertes
-
+     paths:
+      - 'back/**'
 jobs:
   build:
     name: Build and analyze  # Nom du job
